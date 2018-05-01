@@ -4,7 +4,7 @@
   <title><![CDATA[🎃StarCloudes]]></title>
   <link href="https://starcloudes.github.io/atom.xml" rel="self"/>
   <link href="https://starcloudes.github.io/"/>
-  <updated>2018-05-01T12:15:59+08:00</updated>
+  <updated>2018-05-01T12:21:26+08:00</updated>
   <id>https://starcloudes.github.io/</id>
   <author>
     <name><![CDATA[]]></name>
@@ -12,6 +12,24 @@
   </author>
   <generator uri="http://www.mweb.im">MWeb</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[About Me]]></title>
+    <link href="https://starcloudes.github.io/15251484082441.html"/>
+    <updated>2018-05-01T12:20:08+08:00</updated>
+    <id>https://starcloudes.github.io/15251484082441.html</id>
+    <content type="html"><![CDATA[
+<pre><code>😀 Hello world!
+</code></pre>
+
+<blockquote>
+<p>💁🏻‍♂️  目前是前端小白鸡</p>
+
+<p>🏃🏻‍  目标是全栈工程师</p>
+</blockquote>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Markdown 语法和 MWeb 写作使用说明]]></title>
