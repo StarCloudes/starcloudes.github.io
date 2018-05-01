@@ -47,7 +47,7 @@
         <li><label>ES6 语法</label></li>
 
           
-            <li><a title="Markdown 语法和 MWeb 写作使用说明" href="15251475672242.html">Markdown 语法和 MWeb 写作使用说明</a></li>
+            <li><a title="ES6 Transpilation" href="15251487162084.html">ES6 Transpilation</a></li>
           
 
       
@@ -55,7 +55,7 @@
         <li><label>Node js</label></li>
 
           
-            <li><a title="欢迎使用 MWeb" href="15251475672243.html">欢迎使用 MWeb</a></li>
+            <li><a title="正则表达式JavaScript" href="15251487678372.html">正则表达式JavaScript</a></li>
           
 
       
@@ -84,13 +84,13 @@
                     
                       <li class="side-title"><span>ES6 语法</span></li>
                         
-                          <li><a title="Markdown 语法和 MWeb 写作使用说明" href="15251475672242.html">Markdown 语法和 MWeb 写作使用说明</a></li>
+                          <li><a title="ES6 Transpilation" href="15251487162084.html">ES6 Transpilation</a></li>
                         
 
                     
                       <li class="side-title"><span>Node js</span></li>
                         
-                          <li><a title="欢迎使用 MWeb" href="15251475672243.html">欢迎使用 MWeb</a></li>
+                          <li><a title="正则表达式JavaScript" href="15251487678372.html">正则表达式JavaScript</a></li>
                         
 
                     
@@ -112,16 +112,271 @@
 
 	
 		<div class="markdown-body">
-		<h1>About Me</h1>
+		<h1>正则表达式JavaScript</h1>
 
-		<pre><code>😀 Hello world!
+		<h2 id="toc_0">一些匹配方法</h2>
+
+<hr/>
+
+<p>去除首尾的</p>
+
+<pre><code>//去除首尾的‘/’
+input = input.replace(/^\/*|\/*$/g,&#39;&#39;);
 </code></pre>
 
-<blockquote>
-<p>💁🏻‍♂️  目前是前端小白鸡</p>
+<p>javascript:; 、javascript:void(0)</p>
 
-<p>🏃🏻‍  目标是全栈工程师</p>
-</blockquote>
+<pre><code>&#39;javascript:;&#39;.match(/^(javascript\💩💩💩*\:|#)/);
+//[&quot;javascript:&quot;, &quot;javascript:&quot;, index: 0, input: &quot;javascript:;&quot;]
+</code></pre>
+
+<p>匹配</p>
+
+<pre><code>var str = &quot;access_token=dcb90862-29fb-4b03-93ff-5f0a8f546250; refresh_token=702f4815-a0ff-456c-82ce-24e4d7d619e6; account_uid=1361177947320160506170322436&quot;;
+str.match(/account_uid=([^\=]+(\;)|(.*))/ig);
+</code></pre>
+
+<p>匹配一些字符</p>
+
+<pre><code>var str = &#39;asdf html-webpack-plugin for &quot;index/index.html&quot; asdfasdf&#39;;
+str.match(/html-webpack-plugin for \&quot;(.*)\&quot;/ig);
+console.log(RegExp.$1) //=&gt;index/index.html
+</code></pre>
+
+<p>关键字符替换</p>
+
+<pre><code>&#39;css/[hash:8].index-index.css&#39;.replace(/\[(?:(\w+):)?(contenthash|hash)(?::([a-z]+\d*))?(?::(\d+))?\]/ig,&#39;(.*)&#39;);
+//=&gt; css/(.*).index-index.css
+</code></pre>
+
+<p>替换参数中的值</p>
+
+<pre><code>var str  = &#39;&lt;!DOCTYPE html&gt;&lt;html manifest=&quot;../../cache.manifest&quot; lang=&quot;en&quot;&gt;&lt;head&gt;&lt;meta charset=&quot;UTF-8&quot;&gt;&#39;;
+str.replace(/&lt;html[^&gt;]*manifest=&quot;([^&quot;]*)&quot;[^&gt;]*&gt;/,function(word){
+   return word.replace(/manifest=&quot;([^&quot;]*)&quot;/,&#39;manifest=&quot;&#39;+☍+&#39;&quot;&#39;);
+}).replace(/&lt;html(\💩💩💩?[^\&gt;]*\&gt;)/,function(word){
+    if(word.indexOf(&#39;manifest&#39;)) return word;
+    return word.replace(&#39;&lt;html&#39;,&#39;&lt;html manifest=&quot;&#39;+☍+&#39;&quot;&#39;);
+});
+//原：&lt;!DOCTYPE html&gt;&lt;html manifest=&quot;../../cache.manifest&quot; lang=&quot;en&quot;&gt;&lt;head&gt;&lt;meta charset=&quot;UTF-8&quot;&gt;
+//替换成=&gt; &lt;!DOCTYPE html&gt;&lt;html manifest=&quot;cache.manifest&quot; lang=&quot;en&quot;&gt;&lt;head&gt;&lt;meta charset=&quot;UTF-8&quot;&gt;
+</code></pre>
+
+<p>匹配括号内容</p>
+
+<pre><code>&#39;max_length(12)&#39;.match(/^(.+?)\((.+)\)$/)
+// [&quot;max_length(12)&quot;, &quot;max_length&quot;, &quot;12&quot;, index: 0, input: &quot;max_length(12)&quot;]
+</code></pre>
+
+<p>调换</p>
+
+<pre><code>var name = &quot;Doe, John&quot;; 
+name.replace(/(\w+)\💩💩💩*, \💩💩💩*(\w+)/, &quot;$2 $1&quot;); 
+//=&gt; &quot;John Doe&quot;
+</code></pre>
+
+<p>字符串截取</p>
+
+<pre><code>var str = &#39;asfdf === sdfaf ##&#39;
+str.match(/[^===]+(?=[===])/g) // 截取 ===之前的内容
+
+str.replace(/\n/g,&#39;&#39;)  // 替换字符串中的 \n 换行字符
+</code></pre>
+
+<h2 id="toc_1">验证</h2>
+
+<hr/>
+
+<p>小数点后几位验证</p>
+
+<pre><code>// 精确到1位小数
+/^[1-9][0-9]*$|^[1-9][0-9]*\.[0-9]$|^0\.[0-9]$/.test(1.2);
+
+// 精确到2位小数
+/^[0-9]+(.[0-9]{2})?$/.test(1.221);
+</code></pre>
+
+<p>密码强度正则</p>
+
+<pre><code>// 必须是包含大小写字母和数字的组合，不能使用特殊字符，长度在8-10之间。
+/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,10}$/.test(&quot;weeeeeeeW2&quot;);
+//密码强度正则，最少6位，包括至少1个大写字母，1个小写字母，1个数字，1个特殊字符
+/^.*(?=.{6,})(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&amp;*? ]).*$/.test(&quot;diaoD123#&quot;);
+//输出 true
+</code></pre>
+
+<p>校验中文</p>
+
+<pre><code>/^[\u4e00-\u9fa5]{0,}$/.test(&quot;但是d&quot;); //false
+/^[\u4e00-\u9fa5]{0,}$/.test(&quot;但是&quot;); //true
+/^[\u4e00-\u9fa5]{0,}$/.test(&quot;但是&quot;); //true
+</code></pre>
+
+<p>包含中文正则</p>
+
+<pre><code>/[\u4E00-\u9FA5]/.test(&quot;但是d&quot;) //true
+</code></pre>
+
+<p>由数字、26个英文字母或下划线组成的字符串</p>
+
+<pre><code>/^\w+$/.test(&quot;ds2_@#&quot;); // false
+</code></pre>
+
+<p>身份证号正则</p>
+
+<pre><code>//身份证号（18位）正则
+/^[1-9]\d{5}(18|19|([23]\d))\d{2}((0[1-9])|(10|1154902840@qq.com|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$/.test(&quot;42112319870115371X&quot;);
+//输出 false
+</code></pre>
+
+<p>校验日期</p>
+
+<p>“yyyy-mm-dd“ 格式的日期校验，已考虑平闰年。</p>
+
+<pre><code>//日期正则，简单判定,未做月份及日期的判定
+var dP1 = /^\d{4}(\-)\d{1,2}\1\d{1,2}$/;
+//输出 true
+console.log(dP1.test(&quot;2017-05-1154902840@qq.com&quot;));
+//输出 true
+console.log(dP1.test(&quot;2017-15-1154902840@qq.com&quot;));
+//日期正则，复杂判定
+var dP2 = /^(?:(?!0000)[0-9]{4}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-8])|(?:0[13-9]|1[0-2])-(?:29|30)|(?:0[13578]|1[02])-31)|(?:[0-9]{2}(?:0[48]|[2468][048]|[13579][26])|(?:0[48]|[2468][048]|[13579][26])00)-02-29)$/;
+//输出 true
+console.log(dP2.test(&quot;2017-02-1154902840@qq.com&quot;));
+//输出 false
+console.log(dP2.test(&quot;2017-15-1154902840@qq.com&quot;));
+//输出 false
+console.log(dP2.test(&quot;2017-02-29&quot;));
+// true
+</code></pre>
+
+<p>校验文件后缀</p>
+
+<pre><code>  var strRegex = &quot;(.jpg|.gif|.txt)&quot;;
+  var re=new RegExp(strRegex);
+  if (re.test(str)){
+
+  }
+/(.jpg|.gif)+(\?|\#|$)/.test(&#39;a/b/c.jpgsss&#39;); //=&gt; false
+/(.jpg|.gif)+(\?|\#|$)/.test(&#39;a/b/c.jpg?&#39;); //=&gt; true
+</code></pre>
+
+<p>用户名正则</p>
+
+<pre><code>//用户名正则，4到16位（字母，数字，下划线，减号）
+/^[a-zA-Z0-9_-]{4,16}$/.test(&quot;diaodiao&quot;);
+//输出 true
+</code></pre>
+
+<p>整数正则</p>
+
+<pre><code>/^\d+$/.test(&quot;42&quot;);    //正整数正则  -&gt; 输出 true
+/^-\d+$/.test(&quot;-42&quot;);  //负整数正则  -&gt; 输出 true
+/^-?\d+$/.test(&quot;-42&quot;); //整数正则  -&gt; 输出 true
+
+/^[0-9]+$/.test(25.5455) //正整数正则  -&gt; 输出 false
+// 浮点数
+/^(?:[-+])?(?:[0-9]+)?(?:\.[0-9]*)?(?:[eE][\+\-]?(?:[0-9]+))?$/.test(0.2)
+</code></pre>
+
+<p>数字正则</p>
+
+<ul>
+<li><p>可以是整数也可以是浮点数</p>
+
+<p>/<sup>\d*.?\d+$/.test(&quot;42.2&quot;);</sup>     //正数正则  -&gt; 输出 true<br/>
+/<sup>-\d*.?\d+$/.test(&quot;-42.2&quot;);</sup>   //负数正则 -&gt; 输出 true<br/>
+/<sup>-?\d*.?\d+$/.test(&quot;-42.2&quot;);</sup>  //数字正则 -&gt; 输出 true</p></li>
+</ul>
+
+<p>Email正则</p>
+
+<pre><code>//Email正则
+/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/.test(&quot;wowohoo@qq.com&quot;);
+//输出 true
+
+// 1.邮箱以a-z、A-Z、0-9开头，最小长度为1.
+// 2.如果左侧部分包含-、_、.则这些特殊符号的前面必须包一位数字或字母。
+// 3.@符号是必填项
+// 4.右则部分可分为两部分，第一部分为邮件提供商域名地址，第二部分为域名后缀，现已知的最短为2位。
+//   最长的为6为。
+// 5.邮件提供商域可以包含特殊字符-、_、.
+/^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$/.test(&quot;wowohoo@qq.com&quot;);
+</code></pre>
+
+<p>传真号码</p>
+
+<pre><code>// 国家代码(2到3位)-区号(2到3位)-电话号码(7到8位)-分机号(3位)
+/^(([0\+]\d{2,3}-)?(0\d{2,3})-)(\d{7,8})(-(\d{3,}))?$/.test(&#39;021-5055455&#39;)
+</code></pre>
+
+<p>手机号码正则</p>
+
+<pre><code>//手机号正则
+/^1[34578]\d{9}$/.test(&quot;13611778887&quot;);
+//输出 true
+
+//* 13段：130、131、132、133、134、135、136、137、138、139
+//* 14段：145、147
+//* 15段：150、151、152、153、155、156、157、158、159
+//* 17段：170、176、177、178
+//* 18段：180、181、182、183、184、185、186、187、188、189
+//* 国际码 如：中国(+86)
+/^((\+?[0-9]{1,4})|(\(\+86\)))?(13[0-9]|14[57]|15[012356789]|17[03678]|18[0-9])\d{8}$/.test(&quot;13611778887&quot;);
+</code></pre>
+
+<p>☍正则</p>
+
+<pre><code>//URL正则
+/^((https?|ftp|file):\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/.test(&quot;http://wangchujiang.com&quot;);
+//输出 true
+
+//获取☍中域名、协议正则 &#39;http://xxx.xx/xxx&#39;,&#39;https://xxx.xx/xxx&#39;,&#39;//xxx.xx/xxx&#39;
+/^(http(?:|💩💩💩)\:)*\/\/([^\/]+)/.test(&quot;http://www.baidu.com&quot;);
+
+/^((http|https):\/\/(\w+:{0,1}\w*@)?(\💩💩💩+)|)(:[0-9]+)?(\/|\/([\w#!:.?+=&amp;%@!\-\/]))?$/.test(&#39;https://www.baidu.com/s?wd=@#%$^&amp;%$#&#39;)
+
+// 必须有协议 
+/^[a-zA-Z]+:\/\//.test(&quot;http://www.baidu.com&quot;);
+</code></pre>
+
+<p>IPv4地址正则</p>
+
+<pre><code>//ipv4地址正则
+/^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/.test(&quot;192.168.130.199&quot;);
+//输出 true
+</code></pre>
+
+<p>十六进制颜色正则</p>
+
+<pre><code>//RGB Hex颜色正则
+/^#?([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/.test(&quot;#b8b8b8&quot;);
+//输出 true
+</code></pre>
+
+<p>QQ号码正则</p>
+
+<pre><code>//QQ号正则，5至1154902840@qq.com位
+/^[1-9][0-9]{4,10}$/.test(&quot;398188661&quot;);//输出 true
+</code></pre>
+
+<p>微信号正则</p>
+
+<pre><code>//微信号正则，6至20位，以字母开头，字母，数字，减号，下划线
+/^[a-zA-Z]([-_a-zA-Z0-9]{5,19})+$/.test(&quot;jslite&quot;); //输出 true
+</code></pre>
+
+<p>车牌号正则</p>
+
+<pre><code>//车牌号正则
+/^[京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领A-Z]{1}[A-Z]{1}[A-Z0-9]{4}[A-Z0-9挂学警港澳]{1}$/.test(&quot;沪B99116&quot;) //输出 true
+</code></pre>
+
+<p>颜色值校验</p>
+
+<pre><code>//HEX颜色正则
+/^#?([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$/.test(&quot;#ccb2b2&quot;)
+</code></pre>
 
 
 		</div>

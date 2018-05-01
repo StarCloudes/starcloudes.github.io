@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
     
-  other - 🎃StarCloudes
+  ES6 Transpilation - 🎃StarCloudes
   
   </title>
  <meta name="description" content="">
@@ -107,28 +107,115 @@
             </div>
             <div class="large-9 medium-9 columns">
 
- 
+ <div class="markdown-body">
+<h1>ES6 Transpilation</h1>
+
+<p>In this lesson, you will learn about two important tools for addressing browser compatibility issues.</p>
+
+<p>caniuse.com — A website that provides data on web browser compatibility for HTML, CSS, and JavaScript features. You will learn how to use it to look up ES6 feature support.</p>
+
+<p>Babel — A Javascript library that you can use to convert new, unsupported JavaScript (ES6), into an older version (ES5) that is recognized by most modern browsers.</p>
+
+<ol>
+<li>caniuse.com </li>
+</ol>
+
+<p>While most new browser versions support the majority of the ES6 library, there are still a couple sources of compatibility issues:</p>
+
+<ul>
+<li>Some users have not updated to the latest, ES6 supported web browser version.</li>
+<li>A few ES6 features, like modules, are still not supported by most web browsers.</li>
+</ul>
+
+<p>Because companies add support for ES6 features gradually, it&#39;s important for you to know how to look up browser support on a feature-by-feature basis. The website caniuse.com is the best resource for finding browser compatibility information.</p>
+
+<p>In caniuse, you can enter an ES6 feature, like let, and see the percentage of browsers that recognize it. You can also see when each major web browser (Chrome, Safari, Edge, etc.) added support for the keyword.</p>
+
+<ol>
+<li><p>Why ES6?</p></li>
+</ol>
+
+<ul>
+<li>A similarity to other programming languages — JavaScript ES6 is syntactically more similar to other object-oriented programming languages. This leads to less friction when experienced, non-JavaScript developers want to learn JavaScript.</li>
+<li>Readability and economy of code — The new syntax is often easier to understand (more readable) and requires fewer characters to create the same functionality (economy of code).</li>
+<li><p>Addresses sources of ES5 bugs — Some ES5 syntax led to common bugs. With ES6, Ecma introduced syntax that mitigates some of the most common pitfalls.</p></li>
+</ul>
+
+<ol>
+<li><p>Transpilation With Babel</p>
+
+<p>In the remaining exercises of this lesson, you will learn how to use Babel to transpile the new, easy-to-✎ version of      JavaScript (ES6) to the old, browser-compatible version of JavaScript (ES5).</p>
+
+<p>npm install babel-cli<br/>
+npm install babel-preset-env<br/>
+npm run build</p></li>
+</ol>
+
+<p>You can view the ES5 code in ./lib/main.js.</p>
+
+<p>4.npm init</p>
+
+<ul>
+<li>Before we install Babel, we need to setup our project to use the node package manager (npm). Developers use npm to access and manage Node packages. Node packages are directories that contain JavaScript code written by other developers. You can use these packages to reduce duplication of work and avoid bugs.</li>
+<li><p>Before we can add Babel to our project directory, we need to run npm init</p></li>
+</ul>
+
+<ol>
+<li><p>.babelrc</p></li>
+</ol>
+
+<ul>
+<li><p>run touch .babelrcto create this file  .babelrc</p>
+
+<ul>
+<li>{
+&quot;presets&quot;: [&quot;env&quot;]
+}</li>
+</ul></li>
+<li><p>Babel Source Lib</p></li>
+</ul>
+
+<p>Add &quot;build&quot;: &quot;babel src -d lib&quot;In package.json</p>
 
 
-	
-		<div class="markdown-body">
-		<h1>About Me</h1>
+</div>
 
-		<pre><code>😀 Hello world!
-</code></pre>
+<br /><br />
+<hr />
 
-<blockquote>
-<p>💁🏻‍♂️  目前是前端小白鸡</p>
+<div class="row clearfix">
+  <div class="large-6 columns">
+	<div class="text-left" style="padding:15px 0px;">
+		
+	        <a href="15251487678372.html"  title="Previous Post: 正则表达式JavaScript">&laquo; 正则表达式JavaScript</a>
+	    
+	</div>
+  </div>
+  <div class="large-6 columns">
+	<div class="text-right" style="padding:15px 0px;">
+		
+	        <a href="15251484082441.html" 
+	        title="Next Post: About Me">About Me &raquo;</a>
+	    
+	</div>
+  </div>
+</div>
 
-<p>🏃🏻‍  目标是全栈工程师</p>
-</blockquote>
+<div class="row">
+<div style="padding:0px 0.93em;" class="share-comments">
 
-
-		</div>
-	
-
-  
-  
+</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		var currentURL = '15251487162084.html';
+		$('#side-nav a').each(function(){
+			if($(this).attr('href') == currentURL){
+				$(this).parent().addClass('active');
+			}
+		});
+	});
+</script>  
 </div></div>
 
 
