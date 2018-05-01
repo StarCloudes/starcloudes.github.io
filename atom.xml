@@ -4,7 +4,7 @@
   <title><![CDATA[🎃StarCloudes]]></title>
   <link href="https://starcloudes.github.io/atom.xml" rel="self"/>
   <link href="https://starcloudes.github.io/"/>
-  <updated>2018-05-01T12:28:46+08:00</updated>
+  <updated>2018-05-01T12:30:47+08:00</updated>
   <id>https://starcloudes.github.io/</id>
   <author>
     <name><![CDATA[]]></name>
@@ -12,6 +12,100 @@
   </author>
   <generator uri="http://www.mweb.im">MWeb</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[About Me]]></title>
+    <link href="https://starcloudes.github.io/15251484082441.html"/>
+    <updated>2018-05-01T12:20:08+08:00</updated>
+    <id>https://starcloudes.github.io/15251484082441.html</id>
+    <content type="html"><![CDATA[
+<pre><code>😀 Hello world!
+</code></pre>
+
+<blockquote>
+<p>💁🏻‍♂️  目前是前端小白鸡</p>
+
+<p>🏃🏻‍  目标是全栈工程师</p>
+</blockquote>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[ES6 Transpilation]]></title>
+    <link href="https://starcloudes.github.io/15251487162084.html"/>
+    <updated>2018-05-01T12:25:16+08:00</updated>
+    <id>https://starcloudes.github.io/15251487162084.html</id>
+    <content type="html"><![CDATA[
+<p>In this lesson, you will learn about two important tools for addressing browser compatibility issues.</p>
+
+<p>caniuse.com — A website that provides data on web browser compatibility for HTML, CSS, and JavaScript features. You will learn how to use it to look up ES6 feature support.</p>
+
+<p>Babel — A Javascript library that you can use to convert new, unsupported JavaScript (ES6), into an older version (ES5) that is recognized by most modern browsers.</p>
+
+<ol>
+<li>caniuse.com </li>
+</ol>
+
+<p>While most new browser versions support the majority of the ES6 library, there are still a couple sources of compatibility issues:</p>
+
+<ul>
+<li>Some users have not updated to the latest, ES6 supported web browser version.</li>
+<li>A few ES6 features, like modules, are still not supported by most web browsers.</li>
+</ul>
+
+<p>Because companies add support for ES6 features gradually, it&#39;s important for you to know how to look up browser support on a feature-by-feature basis. The website caniuse.com is the best resource for finding browser compatibility information.</p>
+
+<p>In caniuse, you can enter an ES6 feature, like let, and see the percentage of browsers that recognize it. You can also see when each major web browser (Chrome, Safari, Edge, etc.) added support for the keyword.</p>
+
+<ol>
+<li><p>Why ES6?</p></li>
+</ol>
+
+<ul>
+<li>A similarity to other programming languages — JavaScript ES6 is syntactically more similar to other object-oriented programming languages. This leads to less friction when experienced, non-JavaScript developers want to learn JavaScript.</li>
+<li>Readability and economy of code — The new syntax is often easier to understand (more readable) and requires fewer characters to create the same functionality (economy of code).</li>
+<li><p>Addresses sources of ES5 bugs — Some ES5 syntax led to common bugs. With ES6, Ecma introduced syntax that mitigates some of the most common pitfalls.</p></li>
+</ul>
+
+<ol>
+<li><p>Transpilation With Babel</p>
+
+<p>In the remaining exercises of this lesson, you will learn how to use Babel to transpile the new, easy-to-✎ version of      JavaScript (ES6) to the old, browser-compatible version of JavaScript (ES5).</p>
+
+<p>npm install babel-cli<br/>
+npm install babel-preset-env<br/>
+npm run build</p></li>
+</ol>
+
+<p>You can view the ES5 code in ./lib/main.js.</p>
+
+<p>4.npm init</p>
+
+<ul>
+<li>Before we install Babel, we need to setup our project to use the node package manager (npm). Developers use npm to access and manage Node packages. Node packages are directories that contain JavaScript code written by other developers. You can use these packages to reduce duplication of work and avoid bugs.</li>
+<li><p>Before we can add Babel to our project directory, we need to run npm init</p></li>
+</ul>
+
+<ol>
+<li><p>.babelrc</p></li>
+</ol>
+
+<ul>
+<li><p>run touch .babelrcto create this file  .babelrc</p>
+
+<ul>
+<li>{
+&quot;presets&quot;: [&quot;env&quot;]
+}</li>
+</ul></li>
+<li><p>Babel Source Lib</p></li>
+</ul>
+
+<p>Add &quot;build&quot;: &quot;babel src -d lib&quot;In package.json</p>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[正则表达式JavaScript]]></title>
@@ -282,100 +376,6 @@ console.log(dP2.test(&quot;2017-02-29&quot;));
 <pre><code>//HEX颜色正则
 /^#?([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$/.test(&quot;#ccb2b2&quot;)
 </code></pre>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[ES6 Transpilation]]></title>
-    <link href="https://starcloudes.github.io/15251487162084.html"/>
-    <updated>2018-05-01T12:25:16+08:00</updated>
-    <id>https://starcloudes.github.io/15251487162084.html</id>
-    <content type="html"><![CDATA[
-<p>In this lesson, you will learn about two important tools for addressing browser compatibility issues.</p>
-
-<p>caniuse.com — A website that provides data on web browser compatibility for HTML, CSS, and JavaScript features. You will learn how to use it to look up ES6 feature support.</p>
-
-<p>Babel — A Javascript library that you can use to convert new, unsupported JavaScript (ES6), into an older version (ES5) that is recognized by most modern browsers.</p>
-
-<ol>
-<li>caniuse.com </li>
-</ol>
-
-<p>While most new browser versions support the majority of the ES6 library, there are still a couple sources of compatibility issues:</p>
-
-<ul>
-<li>Some users have not updated to the latest, ES6 supported web browser version.</li>
-<li>A few ES6 features, like modules, are still not supported by most web browsers.</li>
-</ul>
-
-<p>Because companies add support for ES6 features gradually, it&#39;s important for you to know how to look up browser support on a feature-by-feature basis. The website caniuse.com is the best resource for finding browser compatibility information.</p>
-
-<p>In caniuse, you can enter an ES6 feature, like let, and see the percentage of browsers that recognize it. You can also see when each major web browser (Chrome, Safari, Edge, etc.) added support for the keyword.</p>
-
-<ol>
-<li><p>Why ES6?</p></li>
-</ol>
-
-<ul>
-<li>A similarity to other programming languages — JavaScript ES6 is syntactically more similar to other object-oriented programming languages. This leads to less friction when experienced, non-JavaScript developers want to learn JavaScript.</li>
-<li>Readability and economy of code — The new syntax is often easier to understand (more readable) and requires fewer characters to create the same functionality (economy of code).</li>
-<li><p>Addresses sources of ES5 bugs — Some ES5 syntax led to common bugs. With ES6, Ecma introduced syntax that mitigates some of the most common pitfalls.</p></li>
-</ul>
-
-<ol>
-<li><p>Transpilation With Babel</p>
-
-<p>In the remaining exercises of this lesson, you will learn how to use Babel to transpile the new, easy-to-✎ version of      JavaScript (ES6) to the old, browser-compatible version of JavaScript (ES5).</p>
-
-<p>npm install babel-cli<br/>
-npm install babel-preset-env<br/>
-npm run build</p></li>
-</ol>
-
-<p>You can view the ES5 code in ./lib/main.js.</p>
-
-<p>4.npm init</p>
-
-<ul>
-<li>Before we install Babel, we need to setup our project to use the node package manager (npm). Developers use npm to access and manage Node packages. Node packages are directories that contain JavaScript code written by other developers. You can use these packages to reduce duplication of work and avoid bugs.</li>
-<li><p>Before we can add Babel to our project directory, we need to run npm init</p></li>
-</ul>
-
-<ol>
-<li><p>.babelrc</p></li>
-</ol>
-
-<ul>
-<li><p>run touch .babelrcto create this file  .babelrc</p>
-
-<ul>
-<li>{
-&quot;presets&quot;: [&quot;env&quot;]
-}</li>
-</ul></li>
-<li><p>Babel Source Lib</p></li>
-</ul>
-
-<p>Add &quot;build&quot;: &quot;babel src -d lib&quot;In package.json</p>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[About Me]]></title>
-    <link href="https://starcloudes.github.io/15251484082441.html"/>
-    <updated>2018-05-01T12:20:08+08:00</updated>
-    <id>https://starcloudes.github.io/15251484082441.html</id>
-    <content type="html"><![CDATA[
-<pre><code>😀 Hello world!
-</code></pre>
-
-<blockquote>
-<p>💁🏻‍♂️  目前是前端小白鸡</p>
-
-<p>🏃🏻‍  目标是全栈工程师</p>
-</blockquote>
 
 ]]></content>
   </entry>
